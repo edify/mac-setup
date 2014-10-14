@@ -2,9 +2,6 @@
 - name: install vagrant vbguest plugin
   shell: "NOKOGIRI_USE_SYSTEM_LIBRARIES=1 vagrant plugin install vagrant-vbguest"
 
-- name: install vagrant fusion plugin
-  shell: "NOKOGIRI_USE_SYSTEM_LIBRARIES=1 vagrant plugin install vagrant-vmware-fusion"
-
 - name: install vagrant berkshelf plugin
   shell: "NOKOGIRI_USE_SYSTEM_LIBRARIES=1 vagrant plugin install vagrant-berkshelf"
 

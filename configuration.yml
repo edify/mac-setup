@@ -6,9 +6,7 @@
     clone_url: https://github.com/robbyrussell/oh-my-zsh.git
     dest: /Users/{{ ansible_user_id }}/.oh-my-zsh
   - role: osx
-  - role: homedir
   - role: dotfiles
-  - role: ssh
   - role: alfred
   - role: chef
   - role: jetbrains

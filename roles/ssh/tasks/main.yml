@@ -1,8 +1,0 @@
----
-- name: clear .ssh
-  command: rm -rf ~/.ssh
-  ignore_errors: True
-
-- name: symlink to dropbox
-  file: state=link src="~/Dropbox/ssh" dest="~/.ssh" force=true
-
