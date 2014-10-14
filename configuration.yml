@@ -8,6 +8,5 @@
   - role: osx
   - role: dotfiles
   - role: alfred
-  - role: chef
   - role: jetbrains
   - role: legit
