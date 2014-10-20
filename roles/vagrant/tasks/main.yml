@@ -1,7 +1,4 @@
 ---
-- name: install vagrant vbguest plugin
-  shell: "NOKOGIRI_USE_SYSTEM_LIBRARIES=1 vagrant plugin install vagrant-vbguest"
-
-- name: install vagrant berkshelf plugin
-  shell: "NOKOGIRI_USE_SYSTEM_LIBRARIES=1 vagrant plugin install vagrant-berkshelf"
-
+- name: install vagrant plugins
+  shell: "NOKOGIRI_USE_SYSTEM_LIBRARIES=1 vagrant plugin install {{ item }}"
+  with_items: plugins

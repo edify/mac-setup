@@ -2,12 +2,6 @@
 - name: install heroku toolbelt
   homebrew: name=heroku-toolbelt state=present
 
-- name: install heroku accounts plugin
-  command: heroku plugins:install https://github.com/ddollar/heroku-accounts.git
-
-- name: install heroku pg extras plugin
-  command: heroku plugins:install https://github.com/heroku/heroku-pg-extras.git
-
-- name: install heroku pg transfer plugin
-  command: heroku plugins:install https://github.com/ddollar/heroku-pg-transfer.git
-
+- name: install heroku plugins
+  command: heroku plugins:install {{ item }}
+  with_items: plugins

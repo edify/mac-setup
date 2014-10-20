@@ -1,26 +1,18 @@
 ---
-# binds zsh config
+
+- name: Clone oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/Users/{{ ansible_user_id }}/.oh-my-zsh
+
 - name: add homebrew zsh to /etc/shells
   lineinfile: dest=/etc/shells regexp="local" line="/usr/local/bin/zsh" state=present
   sudo: yes
 
-- name: assert binding of oh-my-zsh
-  command: test -d ~/.oh-my-zsh
-  ignore_errors: True
-  register: omz_bound
-
 - name: backup .zshrc
-  command: cp ~/.zshrc ~/.zshrc.orig
+  command: rm ~/.zshrc
   ignore_errors: True
-  when: omz_bound|failed
-
-- name: symlink oh-my-zsh
-  file: state=link src=~/src/github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
-  when: omz_bound|failed
 
 - name: copy oh-my-zsh template
-  copy: src=~/.oh-my-zsh/templates/zshrc.zsh-template dest=~/.zshrc
-  when: omz_bound|failed
+  copy: src=/Users/{{ ansible_user_id }}/.oh-my-zsh/templates/zshrc.zsh-template dest=/Users/{{ ansible_user_id }}/.zshrc
 
 - name: change shell
   command: chsh -s /usr/local/bin/zsh

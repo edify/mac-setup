@@ -1,7 +1,13 @@
-Edify's MacBook Setup Ansible Playbook
+starter
 =======
 
-Just run
+XCode Command-Line tools
+
+```
+> xcode-select --install
+```
+
+Then just run
 
 ```
 ./mac-setup.sh

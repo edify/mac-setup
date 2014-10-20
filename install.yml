@@ -48,7 +48,6 @@
     - java
     - alfred
     - intellij-idea-ce
-    - pycharm-ce
     - sublime-text
     - virtualbox
     - vagrant
@@ -70,15 +69,18 @@
     - remote-desktop-connection
     - joinme
     - silverlight
-    - adobe-air
+    #- adobe-air
     - mono-mdk
     - onepassword
     - arduino-beta
     - chefdk
+    - mailbox
   - role: heroku
   - role: ruby_gems
   - role: npm_packages
   - role: vagrant
+  - role: vim
+  - role: powerline
   tasks:
     name: Install Golang
     homebrew: name=go state=latest install_options=--cross-compile-all

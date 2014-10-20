@@ -7,6 +7,5 @@ gems:
   - berkshelf
   - pry
   - hirb
-  - rake
   - svn2git
   - ghost

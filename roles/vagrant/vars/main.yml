@@ -1,0 +1,5 @@
+---
+plugins:
+  - vagrant-vbguest
+  - vagrant-vmware-fusion
+  - vagrant-berkshelf
