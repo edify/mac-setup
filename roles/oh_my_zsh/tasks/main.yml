@@ -18,7 +18,7 @@
   command: chsh -s /usr/local/bin/zsh
 
 - name: change oh-my-zsh plugin list
-  lineinfile: dest=~/.zshrc regexp="^plugins=" line="plugins=(brew brew-cask git git-flow-avh osx vagrant)" state=present
+  lineinfile: dest=~/.zshrc regexp="^plugins=" line="plugins=(brew git git-flow-avh osx vagrant)" state=present
 
 - name: change prompt theme
   lineinfile: dest=~/.zshrc regexp="^ZSH_THEME=" line="ZSH_THEME=\"pygmalion\"" state=present

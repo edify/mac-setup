@@ -5,7 +5,6 @@
   #- role: osx
   - role: homedir
   - role: dotfiles
-  - role: alfred
   - role: jetbrains
   - role: legit
   - role: dock
