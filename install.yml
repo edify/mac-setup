@@ -38,6 +38,7 @@
     - mongodb
     - redis
     - mariadb
+    - gdbm
     - zsh
   - role: heroku
   - role: ruby_gems
