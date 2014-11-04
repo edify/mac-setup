@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Install Homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 #No password sudo
 sudo sed -i .bak -e 's/^# \(%wheel.*ALL=(ALL) NOPASSWD: ALL\)/\1/g' /etc/sudoers
 sudo dscl . append /Groups/wheel GroupMembership $USER
