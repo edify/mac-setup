@@ -5,6 +5,7 @@
   - role: dotfiles
   - role: legit
   - role: dock
+  - role: subl
     apps:
       - /Applications/Google Chrome.app
       - /Applications/Skype.app
