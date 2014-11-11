@@ -1,13 +1,7 @@
-starter
+Mac-Setup
 =======
 
-XCode Command-Line tools
-
-```
-> xcode-select --install
-```
-
-Then just run
+Just run
 
 ```
 ./mac-setup.sh
