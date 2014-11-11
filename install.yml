@@ -2,7 +2,7 @@
 # Here we describe every software we may want to install
 - hosts: all
   roles:
-  - role: osxc.packages
+  - role: packages
     brew_taps:
     - homebrew/binary
     brew_packages:
