@@ -3,7 +3,7 @@
 #  homebrew: name=macvim install_options="--env-std --override-system-vim --with-lua"
 
 - name: install vim
-  homebrew: name=vim install_options=--override-system-vi
+  homebrew: name=vim install_options="--env-std --override-system-vi"
 
 - name: create bundle directory
   file: path=~/.vim/bundle state=directory recurse=true
