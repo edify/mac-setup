@@ -1,7 +1,0 @@
----
-# By Script
-- name: Ensure that homebrew is installed with the script method
-  shell: >
-         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-         creates=/usr/local/Cellar
-
