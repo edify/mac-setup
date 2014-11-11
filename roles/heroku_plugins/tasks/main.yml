@@ -1,7 +1,4 @@
 ---
-- name: install heroku toolbelt
-  homebrew: name=heroku-toolbelt state=present
-
 - name: install heroku plugins
   command: heroku plugins:install {{ item }}
   with_items: plugins

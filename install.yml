@@ -6,6 +6,7 @@
     brew_taps:
     - homebrew/binary
     brew_packages:
+    - heroku-toolbelt
     - fleetctl
     - ctags
     - imagemagick
@@ -39,10 +40,10 @@
     - redis
     - mariadb
     - zsh
-  - role: heroku
+  - role: heroku_plugins
   - role: ruby_gems
   - role: npm_packages
-  - role: vagrant
+  - role: vagrant_plugins
   - role: vim
   - role: powerline
   tasks:
