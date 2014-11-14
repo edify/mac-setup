@@ -19,5 +19,5 @@ PYTHONIOENCODING='utf-8' ansible-playbook desktop.yml
 rm -rf ~/src
 
 #Return to normal password sudo
-sudo sed -i .bak -e 's/^\(%wheel.*ALL=(ALL) NOPASSWD: ALL\)/#\1/g' /etc/sudoers
+sudo sed -i .bak -e 's/^\(%wheel.*ALL=(ALL) NOPASSWD: ALL\)/# \1/g' /etc/sudoers
 sudo dscl . delete /Groups/wheel GroupMembership $USER
