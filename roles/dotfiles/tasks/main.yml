@@ -5,7 +5,7 @@
 - name: clone homesick repos
   command: /usr/local/bin/homesick clone {{item.repo}} creates=/Users/{{ lookup('env','USER') }}/.homesick/repos/{{ item.name }}
   with_items:
-    - { repo: "https://github.com/jarias/dotfiles.git", name: dotfiles }
+    - { repo: "https://github.com/edify/dotfiles.git", name: dotfiles }
   sudo: false
 
 - name: symlink dotfiles
