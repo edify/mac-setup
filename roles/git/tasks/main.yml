@@ -1,6 +1,6 @@
 ---
-- name: set git user.name
-  command: "git config --global user.name \"$(finger `whoami` | awk -F: '{ print $3 }' | head -n1 | sed 's/^ //')\""
+- name: copy script file
+  copy: src=git/files/gitconfig.sh dest=/tmp/gitconfig.sh mode=0744
 
 - name: set git user.email
-  command: "git config --global user.email \"$(finger `whoami` | awk -F: '{ print $3 }' | head -n1 | sed 's/^ //' | sed 's/ /\./' | awk '{print tolower($0)".edify.cr"}')\""
+  script: /tmp/gitconfig.sh
