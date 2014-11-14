@@ -41,6 +41,7 @@
     - mariadb
     - zsh
     - fig
+    - elasticsearch
   - role: heroku_plugins
   - role: ruby_gems
   - role: npm_packages
