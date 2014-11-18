@@ -4,7 +4,6 @@
   roles:
   - role: dotfiles
   - role: legit
-  - role: subl
   - role: git
   - role: dock
     apps:
