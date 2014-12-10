@@ -4,8 +4,5 @@ gems:
   - homesick
   - git-smart
   - lunchy
-  - berkshelf
-  - pry
-  - hirb
   - svn2git
   - ghost
