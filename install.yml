@@ -38,7 +38,7 @@
     - postgres
     - mongodb
     - redis
-    - mariadb
+    - mysql
     - zsh
     - fig
     - elasticsearch
