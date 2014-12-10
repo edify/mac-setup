@@ -36,8 +36,8 @@
   - role: heroku_plugins
   - role: ruby_gems
   - role: npm_packages
-  - role: vagrant_plugins
-  - role: vim
+  #- role: vagrant_plugins
+  #- role: vim
   - role: powerline
   tasks:
     name: Install Golang
