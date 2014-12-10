@@ -7,7 +7,6 @@
     - homebrew/binary
     brew_packages:
     - heroku-toolbelt
-    - fleetctl
     - ctags
     - imagemagick
     - cloc
@@ -23,9 +22,6 @@
     - boot2docker
     - gist
     - reattach-to-user-namespace
-    - packer
-    - ngrok
-    - awscli
     - android-sdk
     - maven
     - ant
@@ -33,7 +29,6 @@
     - python
     - node
     - ruby
-    - jruby
     - legit
     - postgres
     - mongodb
