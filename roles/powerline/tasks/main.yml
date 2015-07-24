@@ -2,5 +2,5 @@
   command: /usr/local/bin/pip install psutil
 
 - name: install powerline
-  command: /usr/local/bin/pip install git+git://github.com/Lokaltog/powerline
+  command: /usr/local/bin/pip install --user --install-option="--prefix=" git+git://github.com/powerline/powerline
 
