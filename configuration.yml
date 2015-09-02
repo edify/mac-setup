@@ -3,7 +3,6 @@
 - hosts: all
   roles:
   - role: dotfiles
-  - role: legit
   - role: git
   - role: dock
     apps:
