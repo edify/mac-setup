@@ -19,7 +19,6 @@
     - git-flow-avh
     - tmux
     - docker
-    - boot2docker
     - gist
     - reattach-to-user-namespace
     - maven
