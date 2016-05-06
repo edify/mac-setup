@@ -8,6 +8,7 @@
     apps:
       - /Applications/Google Chrome.app
       - /Applications/Skype.app
+      - /Applications/Slack.app
       - /Applications/iTerm.app
       - /Applications/LibreOffice.app
     folders:
