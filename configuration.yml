@@ -8,7 +8,6 @@
     apps:
       - /Applications/Google Chrome.app
       - /Applications/Skype.app
-      - /Applications/HipChat.app
       - /Applications/iTerm.app
       - /Applications/LibreOffice.app
     folders:

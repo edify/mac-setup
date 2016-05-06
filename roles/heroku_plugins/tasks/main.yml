@@ -1,4 +1,0 @@
----
-- name: install heroku plugins
-  command: heroku plugins:install {{ item }}
-  with_items: plugins

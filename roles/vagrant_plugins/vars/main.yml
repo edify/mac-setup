@@ -1,4 +1,0 @@
----
-plugins:
-  - vagrant-vbguest
-  - vagrant-berkshelf

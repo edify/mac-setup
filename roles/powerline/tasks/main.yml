@@ -1,6 +1,0 @@
-- name: install psutil
-  command: /usr/local/bin/pip install psutil
-
-- name: install powerline
-  command: /usr/local/bin/pip install --user --install-option="--prefix=" git+git://github.com/powerline/powerline
-

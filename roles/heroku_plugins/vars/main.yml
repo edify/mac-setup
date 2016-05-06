@@ -1,4 +1,0 @@
----
-plugins:
-  - "https://github.com/heroku/heroku-pg-extras.git"
-  - "https://github.com/ddollar/heroku-pg-transfer.git"

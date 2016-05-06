@@ -1,8 +1,0 @@
----
-gems:
-  - bundler
-  - homesick
-  - git-smart
-  - lunchy
-  - svn2git
-  - ghost

@@ -1,3 +1,0 @@
-- name: install gems
-  command: /usr/local/bin/gem install {{ item }} --no-ri --no-rdoc
-  with_items: gems

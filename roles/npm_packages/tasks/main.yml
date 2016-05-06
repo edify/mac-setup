@@ -1,6 +1,0 @@
-- name: set npm prefix
-  command: /usr/local/bin/npm config set prefix '~/.npm-packages'
-
-- name: install npm packages
-  npm: name={{ item }} global=yes
-  with_items: npm_packages
