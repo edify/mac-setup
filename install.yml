@@ -2,8 +2,8 @@
 - hosts: all
   tasks:
   - name: Tap Hombrew
-    hombrew_tap: tap={{ item }}
-    whith_items:
+    homebrew_tap: tap={{ item }}
+    with_items:
       - homebrew/binary
       - caskroom/fonts
   - name: Install fonts
@@ -14,7 +14,7 @@
       - font-source-code-pro
   - name: Install base homebrew packages
     homebrew: name={{ item.name }} install_options={{ item.options }} state=latest
-    whith_items:
+    with_items:
       - { name: 'go', options: '--cross-compile-all' }
       - { name: 'heroku-toolbelt', options: '' }
       - { name: 'imagemagick', options: '' }
