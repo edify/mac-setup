@@ -1,16 +1,74 @@
 ---
 # Configure your freshly installed software
 - hosts: all
-  roles:
-  - role: dotfiles
-  - role: git
-  - role: dock
-    apps:
+  tasks:
+  - name: Clone oh-my-zsh
+    git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/Users/{{ ansible_user_id }}/.oh-my-zsh
+
+  - name: add homebrew zsh to /etc/shells
+    lineinfile: dest=/etc/shells regexp="local" line="/usr/local/bin/zsh" state=present
+    become: yes
+    become_method: sudo
+
+  - name: backup .zshrc
+    command: rm ~/.zshrc
+    ignore_errors: True
+
+  - name: copy oh-my-zsh template
+    copy: src=/Users/{{ ansible_user_id }}/.oh-my-zsh/templates/zshrc.zsh-template dest=/Users/{{ ansible_user_id }}/.zshrc
+
+  - name: change shell
+    command: chsh -s /usr/local/bin/zsh
+
+  - name: change oh-my-zsh plugin list
+    lineinfile: dest=~/.zshrc regexp="^plugins=" line="plugins=(brew git git-flow-avh osx vagrant)" state=present
+
+  - name: change prompt theme
+    lineinfile: dest=~/.zshrc regexp="^ZSH_THEME=" line="ZSH_THEME=\"pygmalion\"" state=present
+  
+  - name: install homesick
+    command: /usr/local/bin/gem install homesick --no-ri --no-rdoc
+
+  - name: clone homesick repos
+    command: /usr/local/bin/homesick clone {{item.repo}} creates=/Users/{{ lookup('env','USER') }}/.homesick/repos/{{ item.name }}
+    with_items:
+      - { repo: "https://github.com/edify/dotfiles.git", name: dotfiles }
+
+  - name: symlink dotfiles
+    command: /usr/local/bin/homesick symlink --force dotfiles
+
+  - name: ensure zshrc presence
+    ignore_errors: True
+    file: path=~/.zshrc state=touch
+
+  - name: add shim to zsh
+    lineinfile: dest=~/.zshrc regexp="\.zshrc\.local" line=". ~/.zshrc.local" state=present
+  
+  - name: Install Dockutils
+    git: repo=https://github.com/kcrawford/dockutil.git dest=/Users/{{ ansible_user_id }}/src/github.com/kcrawford/dockutil
+
+  - name: clean dock
+    shell: "~/src/github.com/kcrawford/dockutil/scripts/dockutil --remove all creates=~/.managed-dock"
+
+  - name: flag managed dock
+    file: path=~/.managed-dock state=touch
+
+  - name: add apps
+    shell: "~/src/github.com/kcrawford/dockutil/scripts/dockutil --add '{{ item }}'"
+    ignore_errors: True
+    with_items:
       - /Applications/Google Chrome.app
       - /Applications/Skype.app
       - /Applications/Slack.app
       - /Applications/iTerm.app
       - /Applications/LibreOffice.app
-    folders:
-    - path: ~/Downloads
-      sort: datemodified
+
+  - name: add folders
+    shell: "~/src/github.com/kcrawford/dockutil/scripts/dockutil --add '{{ item.path }}' --view {{ item.view|default('grid') }} --display {{ item.display|default('folder') }} --sort {{ item.sort|default('name') }}"
+    ignore_errors: True
+    with_items: 
+      - { path: ~/Downloads, sort: datemodified }
+
+  - name: remove ~/src folder
+    file: path=~/src state=absent
+    

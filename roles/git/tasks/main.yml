@@ -1,6 +1,0 @@
----
-- name: copy script file
-  copy: src=roles/git/files/gitconfig.sh dest=/tmp/gitconfig.sh mode=0744
-
-- name: set git user.email
-  script: /tmp/gitconfig.sh
