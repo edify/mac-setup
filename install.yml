@@ -41,8 +41,7 @@
   - name: Install heroku plugins
     command: heroku plugins:install {{ item }}
     with_items:
-      - https://github.com/heroku/heroku-pg-extras.git
-      - https://github.com/ddollar/heroku-pg-transfer.git
+      - heroku-pg-extras
   - name: Install ruby gems
     gem: name={{ item }} state=latest user_install=yes
     with_items:
