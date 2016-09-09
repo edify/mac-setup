@@ -60,6 +60,27 @@
       - yo
       - jshint
       - ember-cli
+  - name: Create GOPATH dir
+    file: state=directory path="~/Golang"
+  - name: Install default Go packages
+    shell: GOPATH=~/Golang go get {{ item.package }}
+    with_items:
+      - { package: golang.org/x/tools/cmd/gotype }
+      - { package: golang.org/x/tools/cmd/goimports }
+      - { package: golang.org/x/tools/cmd/cover }
+      - { package: golang.org/x/tools/cmd/guru }
+      - { package: golang.org/x/tools/cmd/gorename }
+      - { package: github.com/nsf/gocode }
+      - { package: github.com/alecthomas/gometalinter }
+      - { package: github.com/golang/lint/golint }
+      - { package: github.com/rogpeppe/godef }
+      - { package: github.com/kisielk/errcheck }
+      - { package: github.com/jstemmer/gotags }
+      - { package: github.com/klauspost/asmfmt/cmd/asmfmt }
+      - { package: github.com/fatih/motion }
+      - { package: github.com/zmb3/gogetdoc }
+      - { package: github.com/josharian/impl }
+      - { package: github.com/constabulary/gb/... }
   - name: Create VIM bundle directory
     file: path=~/.vim/bundle state=directory recurse=true
   - name: Create VIM autoload directory
