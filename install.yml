@@ -38,6 +38,7 @@
       - { name: 'mycli', options: '' }
       - { name: 'vim', options: '--env-std --override-system-vi' }
       - { name: 'awscli', options: '' }
+      - { name: 'nvm', options: '' }
   - name: Install heroku plugins
     command: heroku plugins:install {{ item }}
     with_items:
