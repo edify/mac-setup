@@ -61,6 +61,7 @@
       - yo
       - jshint
       - ember-cli
+      - eslint
   - name: Create GOPATH dir
     file: state=directory path="~/Golang"
   - name: Install default Go packages
