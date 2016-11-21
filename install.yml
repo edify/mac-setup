@@ -12,6 +12,7 @@
       - font-inconsolata-dz-for-powerline
       - font-hack
       - font-source-code-pro
+      - ngrok
   - name: Install base homebrew packages
     homebrew: name={{ item.name }} install_options={{ item.options }} state=latest
     with_items:
@@ -20,7 +21,6 @@
       - { name: 'imagemagick', options: '' }
       - { name: 'docker', options: '' }
       - { name: 'docker-compose', options: '' }
-      - { name: 'docker-machine', options: '' }
       - { name: 'mercurial', options: '' }
       - { name: 'git', options: '' }
       - { name: 'bazaar', options: '' }
