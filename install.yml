@@ -6,7 +6,7 @@
     with_items:
       - homebrew/binary
       - caskroom/fonts
-  - name: Install fonts
+  - name: Install cask base packages
     homebrew_cask: name={{ item }}
     with_items:
       - font-inconsolata-dz-for-powerline
